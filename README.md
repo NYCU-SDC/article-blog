@@ -15,7 +15,7 @@ article_list.html
 - `connection.php`: For database connection. Every php file require this php file to connect to database.
 - `tryout.php`: For lesson introduction needed.
 - `validatoin.js` and `style.css` are still editing.
-### To be Finished
+## To be Finished
 - `create_update.js`
     - Create article by using JS triggered on button click.
     - Change the php file source in `fetch()` to utilize UPDATE and CREATE in same JS and HTML file.
