@@ -2,12 +2,12 @@
 ## Structure
 ```
 article_list.html
-    |_ script.js
-    |_ data.php
+    |_ article_list.js
+    |_ read_article_list.php
 |_ article.html
-    |_ read_article.js
-    |_ article_content.php
-    |_ delete_article.js
+    |_ article.js
+    |_ read_article.php
+    |_ delete.js
     |_ delete.php
 |_ edit_article.html
     |_ create_update.js
