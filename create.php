@@ -4,8 +4,8 @@ require_once('connection.php');
 // $connection = new db_connection;
 
 // Get title and content from POST data
-$title = $_POST['title'];
-$content = $_POST['content'];
+$title = $_GET['title'];
+$content = $_GET['content'];
 
 // insert new article and id
 $sql = "INSERT INTO articles(title, content) VALUES('".$title."', '".$content."') RETURNING id;";
@@ -31,11 +31,11 @@ try {
 
 // echo $newArticleId;
 
-// if (!empty($result)) {
-//     $url = 'article.html?id='.$result;
-//     Header("Location: $url");
-// }
-// else {
-//     Header("Location: article_list.php");
-// }
+if (!empty($newArticleId)) {
+    $url = 'article.html?id='.$newArticleId;
+    Header("Location: $url");
+}
+else {
+    Header("Location: article_list.php");
+}
 ?>
