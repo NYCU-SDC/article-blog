@@ -3,7 +3,7 @@
 require_once('connection.php');
         
 /* Execute SQL command with PDO */
-$sql = "select id, title, updated_at from articles";
+$sql = "select id, title, updated_at from articles;";
 try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $stmt = $conn->prepare($sql);

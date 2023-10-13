@@ -4,8 +4,8 @@ require_once('connection.php');
 // $connection = new db_connection;
 
 // Get title and content from POST data
-$title = $_GET['title'];
-$content = $_GET['content'];
+$title = $_REQUEST['title'];
+$content = $_REQUEST['content'];
 
 // insert new article and id
 $sql = "INSERT INTO articles(title, content) VALUES('".$title."', '".$content."') RETURNING id;";
@@ -18,7 +18,7 @@ try {
     $newArticleId = $stmt->fetchColumn();
 
     // Output the new article ID
-    echo $newArticleId;
+    echo json_encode($newArticleId);
 } catch(PDOException $e) {
     echo "Error: " . $e->getMessage();
     die($e->getMessage());
@@ -31,11 +31,11 @@ try {
 
 // echo $newArticleId;
 
-if (!empty($newArticleId)) {
-    $url = 'article.html?id='.$newArticleId;
-    Header("Location: $url");
-}
-else {
-    Header("Location: article_list.php");
-}
+// if (!empty($newArticleId)) {
+//     $url = 'article.html?id='.$newArticleId;
+//     Header("Location: $url");
+// }
+// else {
+//     Header("Location: article_list.php");
+// }
 ?>
