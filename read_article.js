@@ -18,14 +18,16 @@ fetch('article_content.php?id='+articleId)
             '<div class="card-footer text-muted">' +
             'Latest Update: ' + item.updated_at +
             '</div>' +
-            '</div>' +
-            '<div class="px-2">' +  
-            '<a href="edit_article.html?update&id=' + articleId + 
-            '" class="btn btn-primary">Update</a>' + 
-            '<a href="' + item.id + 
-            '" class="btn btn-primary">Delete</a></div>';
-            // 將新元素添加到具有ID為data-container的<div>元素中
+            '</div>';
             document.getElementById('data-container').appendChild(div);
+
+            var div2 = document.createElement('div');
+            div2.innerHTML =  
+            '<a href="edit_article.html?update&id=' + articleId + 
+            '" class="btn btn-primary">Update</a>';
+            document.getElementById('data-container').appendChild(div2);
+            // 將新元素添加到具有ID為data-container的<div>元素中
+            
         });
     })
     .catch(error => {
