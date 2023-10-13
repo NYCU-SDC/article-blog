@@ -7,17 +7,16 @@ article_list.html
 |_ article.html
     |_ read_article.js
     |_ article_content.php
+    |_ delete_article.js
+    |_ delete.php
 |_ edit_article.html
     |_ create_update.js
     |_ create.php
+    |_ update.php
 ```
 ### Other Files
 - `connection.php`: For database connection. Every php file require this php file to connect to database.
 - `tryout.php`: For lesson introduction needed.
 - `validatoin.js` and `style.css` are still editing.
 ## To be Finished
-- `create_update.js`
-    - Create article by using JS triggered on button click.
-    - Change the php file source in `fetch()` to utilize UPDATE and CREATE in same JS and HTML file.
-- DELETE article.
 - The outfit of the website.
