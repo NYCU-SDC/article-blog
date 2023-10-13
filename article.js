@@ -3,7 +3,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const articleId = urlParams.get('id');
 
 // 使用Fetch API發送GET請求
-fetch('article_content.php?id='+articleId)
+fetch('read_article.php?id='+articleId)
     .then(response => response.json()) // 解析JSON數據
     .then(data => {
         data.forEach(item => {

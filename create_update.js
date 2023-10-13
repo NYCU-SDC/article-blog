@@ -5,7 +5,7 @@ const isUpdate = urlParams.has('update');
 
 if (isUpdate) {
     const articleId = urlParams.get('id');
-    fetch('article_content.php?id='+articleId)
+    fetch('read_article.php?id='+articleId)
     .then(response => response.json()) // 解析JSON數據
     .then(data => {
         data.forEach(item => {
