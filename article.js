@@ -9,23 +9,20 @@ fetch('read_article.php?id='+articleId)
         data.forEach(item => {
             // 創建新的HTML元素
             var div = document.createElement('div');
+            div.classList.add("border", "border-1", "rounded-3", "p-3", "shadow", "bg-body", "rounded");
+
             div.innerHTML = 
-            '<div class="row row-cols-1 row-cols-md-1 m-2 mb-3 card text-center">' +
-            '<div class="card-header">' +'ID #' + item.title +'</div>' +
-            '<div class="card-body">' +
-            '<h5 class="card-title">' + item.content + '</h5>' +
-            '</div>' +
-            '<div class="card-footer text-muted">' +
-            'Latest Update: ' + item.updated_at +
-            '</div>' +
-            '</div>';
+            '<h1>' + item.title +'</h1>' +
+            '<h6 class="text-muted">' + 'Latest Update: ' + item.updated_at +'</h6>'
+            '<hr>' +
+            '<h5>' + item.content + '</h5>';
             document.getElementById('data-container').appendChild(div);
 
             var div2 = document.createElement('div');
             div2.innerHTML =  
             '<a href="edit_article.html?update&id=' + articleId + 
-            '" class="btn btn-primary">Update</a>';
-            document.getElementById('data-container').appendChild(div2);
+            '" class="btn btn-light border border-1" style="background-color: #f2f2f2;">Update</a>';
+            document.getElementById('button-container').appendChild(div2);
             // 將新元素添加到具有ID為data-container的<div>元素中
             
         });
