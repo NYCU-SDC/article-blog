@@ -3,24 +3,39 @@
 require_once('connection.php');
 // $connection = new db_connection;
 
+// Get title and content from POST data
 $title = $_POST['title'];
 $content = $_POST['content'];
 
-/* insert new article */
-$articles_insert_sql = "
-    INSERT INTO articles(title, content)
-    VALUES('".$title."', ".$content.");
-    RETURNING id;";
-$return_value =$connection->sql_query($articles_insert_sql);
+// insert new article and id
+$sql = "INSERT INTO articles(title, content) VALUES('".$title."', '".$content."') RETURNING id;";
 
-$newArticleId = pg_fetch_result($return_value, 0, 0);
+try {
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    // Fetch the newly inserted article ID
+    $newArticleId = $stmt->fetchColumn();
 
-
-if (isset($url)) {
-    $url = 'article.html?id='.$newArticleId;
-    Header("Location: $url");
+    // Output the new article ID
+    echo $newArticleId;
+} catch(PDOException $e) {
+    echo "Error: " . $e->getMessage();
+    die($e->getMessage());
 }
-else {
-    Header("Location: article_list.php");
-}
+
+// $return_value =$conn->sql_query($articles_insert_sql);
+
+// // Get the ID of the newly inserted article
+// $newArticleId = pg_fetch_result($return_value, 0, 0);
+
+// echo $newArticleId;
+
+// if (!empty($result)) {
+//     $url = 'article.html?id='.$result;
+//     Header("Location: $url");
+// }
+// else {
+//     Header("Location: article_list.php");
+// }
 ?>
