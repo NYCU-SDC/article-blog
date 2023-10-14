@@ -1,10 +1,11 @@
 <?php
+// Import connection file
+require_once('connection.php');
+
+// Get id from JS file
 $article_id = $_REQUEST['id'];
 
-/* Import connection file */
-require_once('connection.php');
-        
-/* Execute SQL command with PDO */
+// Execute SQL command with PDO
 $sql = "select * from articles where id=".$article_id.";";
 try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

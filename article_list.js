@@ -1,10 +1,10 @@
-// Use "fetch()" API to send request
+// Use the "fetch()" API to send a request
 fetch('read_article_list.php')
-    .then(response => response.json()) // 解析JSON數據
+    .then(response => response.json()) // Parse JSON data
     .then(data => {
-        // 遍歷JSON數據並顯示在網頁上
+        // Iterate through JSON data and display it on the web page
         data.forEach(item => {
-            // 創建新的HTML元素
+            // Create a new HTML element
             var div = document.createElement('div');
             div.classList.add("d-flex", "justify-content-center");
             div.innerHTML = 
@@ -18,11 +18,12 @@ fetch('read_article_list.php')
             '</div>' +
             '<a class="stretched-link" href="article.html?id=' + item.id + '">' +
             '</a></div>';
-            // 將新元素添加到具有ID為data-container的<div>元素中
+
+            // Append the new element to the <div> element with ID 'data-container'
             document.getElementById('data-container').appendChild(div);
         });
     })
     .catch(error => {
-        console.error('Error:', error); // 處理錯誤
+        console.error('Error:', error); // Handle errors
     });
 

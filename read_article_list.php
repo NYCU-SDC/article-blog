@@ -1,9 +1,9 @@
 <?php
-/* Import connection file */
+// Import connection file
 require_once('connection.php');
         
-/* Execute SQL command with PDO */
-$sql = "select id, title, updated_at from articles;";
+// Execute SQL command with PDO
+$sql = "SELECT id, title, updated_at FROM articles;";
 try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $stmt = $conn->prepare($sql);
