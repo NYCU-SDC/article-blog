@@ -5,7 +5,6 @@ require_once('connection.php');
 // Execute SQL command with PDO
 $sql = "SELECT id, title, updated_at FROM articles;";
 try {
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     // set the resulting array to associative

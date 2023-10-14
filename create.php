@@ -10,7 +10,6 @@ $content = $_REQUEST['content'];
 $sql = "INSERT INTO articles(title, content) VALUES('".$title."', '".$content."') RETURNING id;";
 
 try {
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     // Fetch the newly inserted article ID

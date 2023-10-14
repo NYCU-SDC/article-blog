@@ -11,7 +11,6 @@ $content = $_REQUEST['content'];
 $sql = "UPDATE articles SET title='".$title."', content='".$content."'
         WHERE id = ".$article_id.";";
 try {
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $stmt = $conn->prepare($sql);
     $stmt->execute();
 

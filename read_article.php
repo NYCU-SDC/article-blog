@@ -8,7 +8,6 @@ $article_id = $_REQUEST['id'];
 // Execute SQL command with PDO
 $sql = "select * from articles where id=".$article_id.";";
 try {
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     // set the resulting array to associative
