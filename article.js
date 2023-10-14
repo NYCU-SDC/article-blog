@@ -13,7 +13,7 @@ fetch('read_article.php?id='+articleId)
 
             div.innerHTML = 
             '<h1>' + item.title +'</h1>' +
-            '<h6 class="text-muted">' + 'Latest Update: ' + item.updated_at +'</h6>'
+            '<h6 class="text-muted">Latest Update: ' + item.updated_at +'</h6>' +
             '<hr>' +
             '<h5>' + item.content + '</h5>';
             document.getElementById('data-container').appendChild(div);
