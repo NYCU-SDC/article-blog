@@ -15,7 +15,7 @@ try {
     $stmt = $conn->prepare($sql);
     $stmt->execute();
 
-    echo $article_id;
+    echo json_encode("sucessful");
 } catch(PDOException $e) {
     echo "Error: " . $e->getMessage();
     die($e->getMessage());

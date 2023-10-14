@@ -40,12 +40,12 @@ function handleClick() {
         });
     }
     else if(isUpdate) {
-        console.log("updat click");
         fetch(`update.php?id=${articleId}&title=${title}&content=${content}`)
         .then(response => response.json())
         .then(data => {
+            console.log(data);
             // Redirect the user to the newly created article page
-            window.location.href = `article.html?id=${data}`;
+            window.location.href = `article.html?id=${articleId}`;
         })
         .catch(error => {
             console.error("Error:", error);
