@@ -17,6 +17,6 @@ article_list.html
 ### Other Files
 - `connection.php`: For database connection. Every php file require this php file to connect to database.
 - `tryout.php`: For lesson introduction needed.
-- `validatoin.js` and `style.css` are still editing.
+- `validatoin.js`: It can not be applied on validation in `edit_article.html`.
 ## To be Finished
-- The outfit of the website.
+Currently finished.
