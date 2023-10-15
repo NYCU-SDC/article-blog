@@ -12,11 +12,11 @@ fetch('read_article.php?id='+articleId)
             div.classList.add("border", "border-1", "rounded-3", "p-3", "shadow", "bg-body", "rounded");
 
             div.innerHTML = 
-            '<h1>' + item.title +'</h1>' +
+            '<h1 class="text-break">' + item.title +'</h1>' +
             '<h6 class="text-muted">Create at: ' + item.created_at +'</h6>' +
             '<h6 class="text-muted">Latest Update: ' + item.updated_at +'</h6>' +
             '<hr>' +
-            '<h5>' + item.content + '</h5>';
+            '<h5 class="text-break">' + item.content + '</h5>';
             // Append the new element to the <div> element with ID "data-container"
             document.getElementById('data-container').appendChild(div);
 
