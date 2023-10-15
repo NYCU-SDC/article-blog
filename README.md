@@ -19,4 +19,4 @@ article_list.html
 - `tryout.php`: For lesson introduction needed.
 - `validatoin.js`: It can not be applied on validation in `edit_article.html`.
 ## To be Finished
-Currently finished.
+- Redirect webpage may not success `window.location.href = `article_list.html`;`
