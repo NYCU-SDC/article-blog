@@ -16,8 +16,6 @@ article_list.html
 ```
 ### Other Files
 - `connection.php`: For database connection. Every php file require this php file to connect to database.
-- `tryout.php`: For lesson introduction needed.
-- `validatoin.js`: It can not be applied on validation in `edit_article.html`.
 ## SDC Practices
 ### Read (article content)
 - `article.js`: practice 1~3
@@ -28,5 +26,3 @@ article_list.html
 - `create_update.js`: practice 5
 ### Delete
 - finish `delete.js` and `delete.php`
-## To be Finished
-- Redirect webpage may not success `window.location.href = `article_list.html`;`
