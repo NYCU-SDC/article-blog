@@ -24,5 +24,6 @@ article_list.html
 - `create.php`: practice 6~7
 ### Update
 - `create_update.js`: practice 5
+- finish `update.php`
 ### Delete
 - finish `delete.js` and `delete.php`

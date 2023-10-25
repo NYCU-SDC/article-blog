@@ -16,7 +16,6 @@ try {
 
     echo json_encode("sucessful");
 } catch(PDOException $e) {
-    echo "Error: " . $e->getMessage();
     die($e->getMessage());
 }
 ?>
