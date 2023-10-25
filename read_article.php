@@ -1,21 +1,23 @@
 <?php
-// Import connection file
-require_once('connection.php');
+    // [Practice]-1: Import connection file
+    require_once('connection.php');
 
-// Get id from JS file
-$article_id = $_REQUEST['id'];
+    // Get id from JS file
+    $article_id = $_REQUEST['id'];
 
-// Execute SQL command with PDO
-$sql = "select * from articles where id=".$article_id.";";
-try {
-    $stmt = $conn->prepare($sql);
-    $stmt->execute();
-    // set the resulting array to associative
-    $result = $stmt->fetchAll(PDO::FETCH_CLASS);
+    // Specify SQL command
+    $sql = "select * from articles where id=".$article_id.";";
+    try {
+        // [Practice]-2: Execute SQL command
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
 
-    echo json_encode($result);
-} catch(PDOException $e) {
-    echo "Error: " . $e->getMessage();
-    die($e->getMessage());
-}
+        // set the resulting array to associative
+        $result = $stmt->fetchAll(PDO::FETCH_CLASS);
+            
+        // [Practice]-3:  Echo result in JSON format
+        echo json_encode($result);
+    } catch(PDOException $e) {
+        die($e->getMessage());
+    }
 ?>

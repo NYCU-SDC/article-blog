@@ -12,7 +12,6 @@
         // Make a database connection
         $conn = new PDO($dsn, $username, $password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
     } catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();
         die($e->getMessage());
     }
 ?>
